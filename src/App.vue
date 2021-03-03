@@ -13,10 +13,9 @@ export default {
     // 监听窗口大小
     const that = this;
     window.onresize = () => {
-      return (() => {
-        that.resize();
-      })();
+      that.resize();
     };
+    this.resize();
   },
   methods: {
     resize() {
@@ -39,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-#nav{
+#nav {
   // height: 100%;
 }
 </style>

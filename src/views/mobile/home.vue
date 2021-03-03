@@ -3,37 +3,29 @@
     <header class="pc-header">
       <van-row style="height: 100%">
         <van-col span="8" class="disF alignCenter">
+          <van-icon name="send-gift-o" size="30" />
+        </van-col>
+        <van-col span="8" class="disF alignCenter justifyCenter">
           <img
             class="pc-img-module"
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
           />
         </van-col>
-        <van-col span="8" class="disF alignCenter justifyCenter">
-          <van-search v-model="value" placeholder="搜索" />
-        </van-col>
-        <van-col span="8" class="disF alignCenter justifyCenter">
-          <van-icon
-            v-for="item in tabBtnList"
-            :name="item.isActived ? item.iconActived : item.icon"
-            size="25"
-            style="margin-right: 20px"
-            @click="handleTabIcon(item)"
-          />
-
-          <van-popover v-model:show="showPopover" trigger="click" :actions="actions">
-            <template #reference>
-              <!-- <van-button type="primary">展示图标</van-button> -->
-              <van-icon name="manager-o" size="25" />
-            </template>
-          </van-popover>
+        <van-col span="8" class="disF alignCenter" style="justify-content: flex-end">
+          <van-icon name="send-gift-o" size="30" />
         </van-col>
       </van-row>
     </header>
+
+    <div class="pc-content">
+      <pubList id="pubList" class="pub-list"></pubList>
+    </div>
   </div>
 </template>
 
 <script>
 import { reactive, toRefs } from "vue";
+import pubList from "@/components/public/list";
 export default {
   setup() {
     const state = reactive({
@@ -88,6 +80,9 @@ export default {
       ...toRefs(stateFun),
     };
   },
+  components: {
+    pubList,
+  },
 };
 </script>
 
@@ -110,5 +105,11 @@ export default {
 }
 .pc-img-module {
   min-width: 105px;
+}
+.pc-content {
+  max-width: 1000px;
+  height: 100%;
+  display: table;
+  margin: 0 auto;
 }
 </style>

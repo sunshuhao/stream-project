@@ -36,14 +36,12 @@
       </van-row>
     </header>
     <div class="pc-content">
-      <div class="asdasdasd">
-        <div class="disF">
-          <pubList id="pubList" class="pub-list"></pubList>
-          <div style="width: 30px"></div>
-          <van-sticky :offset-top="54">
-            <userList v-if="userListStatus" class="user-list"></userList>
-          </van-sticky>
-        </div>
+      <div class="disF">
+        <pubList id="pubList" class="pub-list"></pubList>
+        <div v-if="userListStatus" style="width: 30px"></div>
+        <van-sticky v-if="userListStatus" :offset-top="54">
+          <userList class="user-list"></userList>
+        </van-sticky>
       </div>
     </div>
   </div>
@@ -104,7 +102,7 @@ export default {
         });
       },
       setWindowWidth() {
-        if (document.body.clientWidth > 1000) {
+        if (document.body.clientWidth > 850) {
           console.log("大于");
           state.userListStatus = true;
         } else {
@@ -171,7 +169,6 @@ export default {
 }
 .user-list {
   position: relative;
-  width: 200px;
-  background: red;
+  width: 300px;
 }
 </style>
