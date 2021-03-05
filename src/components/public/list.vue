@@ -3,7 +3,7 @@
     <div class="pc-user-box">
       <div class="pc-list-li" v-for="(item, index) in list">
         <div class="disF" style="width: 100%; margin-bottom: 10px">
-          <div style="width: 100px; padding-left: 20px">
+          <div class="disF" style="width: 100px; padding-left: 20px">
             <img
               src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg"
               style="
@@ -13,12 +13,20 @@
                 vertical-align: middle;
               "
             />
-            <span style="padding-left: 20px">asda</span>
+            <div>
+              <div style="height:20px;line-height:25px;padding-left: 10px">userName</div>
+              <div style="height:20px;line-height:15px;padding-left: 10px;font-size:14px;color:#999999">subtitle</div>
+            </div>
           </div>
           <div style="flex: 1">&nbsp;</div>
           <div
             @click="show = true"
-            style="width: 100px; padding-top: 5px; text-align: right; padding-right: 10px"
+            style="
+              width: 100px;
+              padding-top: 5px;
+              text-align: right;
+              padding-right: 10px;
+            "
           >
             <van-icon name="ellipsis" size="30" />
           </div>

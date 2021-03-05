@@ -8,8 +8,17 @@
         />
       </div>
       <div style="flex: 0.6">
-        <div style="height: 40px; line-height: 60px; font-weight: 600">ssh9800</div>
-        <div style="height: 40px; line-height: 20px; color: #999999; font-size: 12px">
+        <div style="height: 40px; line-height: 60px; font-weight: 600">
+          ssh9800
+        </div>
+        <div
+          style="
+            height: 40px;
+            line-height: 20px;
+            color: #999999;
+            font-size: 12px;
+          "
+        >
           accSun
         </div>
       </div>
@@ -28,10 +37,18 @@
     </div>
     <div class="pm20"></div>
     <div class="disF">
-      <div class="curP" style="flex: 0.5; font-weight: 600;color:#888888">为你推荐</div>
+      <div class="curP" style="flex: 0.5; font-weight: 600; color: #888888">
+        为你推荐
+      </div>
       <div
         class="curP"
-        style="flex: 0.5; text-align: right; font-weight: 600; font-size: 12px;line-height:20px;"
+        style="
+          flex: 0.5;
+          text-align: right;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 20px;
+        "
       >
         查看全部
       </div>
@@ -44,9 +61,18 @@
         />
       </div>
       <div style="flex: 0.6">
-        <div style="height: 30px; line-height: 40px; font-weight: 600">ssh9800</div>
-        <div style="height: 30px; line-height: 20px; color: #999999; font-size: 12px">
-          热门
+        <div style="height: 30px; line-height: 40px; font-weight: 600">
+          ssh9800
+        </div>
+        <div
+          style="
+            height: 30px;
+            line-height: 20px;
+            color: #999999;
+            font-size: 12px;
+          "
+        >
+          {{item.subTitle}}
         </div>
       </div>
       <div
@@ -62,6 +88,10 @@
         关注
       </div>
     </div>
+    <div style="height:30px;"></div>
+    <div class="disF">
+      <div style="font-size:14px;color:#999999;">关于·帮助·新闻中心·API·工作·隐私·条款·地点<br/>热门账户·话题标签·语言</div>
+    </div>
   </div>
 </template>
 
@@ -70,7 +100,7 @@ import { reactive, toRefs } from "vue";
 export default {
   setup() {
     const state = reactive({
-      list: [{}, {}, {}, {}],
+      list: [{ subTitle: "在关注你" }, { subTitle: "user和其他6位用户关注你" }],
     });
 
     const stateFun = reactive({});

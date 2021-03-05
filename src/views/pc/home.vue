@@ -3,22 +3,28 @@
     <header class="pc-header">
       <van-row style="height: 100%">
         <van-col span="8" class="disF alignCenter">
-          <img
+          <!-- <img
             class="pc-img-module"
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-          />
+          /> -->
+          <div style="padding-left: 20px; font-weight: 600; font-size: 20px;text-align:center;width:100%;">
+            平衡点
+          </div>
         </van-col>
         <van-col span="8" class="disF alignCenter justifyCenter">
           <van-search v-model="value" placeholder="搜索" />
         </van-col>
         <van-col span="8" class="disF alignCenter justifyCenter">
-          <van-icon
+          <!-- <van-icon
             v-for="item in tabBtnList"
             :name="item.isActived ? item.iconActived : item.icon"
             size="25"
             style="margin-right: 20px"
             @click="handleTabIcon(item)"
-          />
+          /> -->
+          <img :src="allImgs.Imgs11" style="width: 60px" />
+          <img :src="allImgs.Imgs22" style="width: 52px; margin-left: 10px" />
+          <img :src="allImgs.Imgs33" style="width: 48px; margin-left: 10px" />
 
           <van-popover
             v-model:show="showPopover"
@@ -29,7 +35,11 @@
           >
             <template #reference>
               <!-- <van-button type="primary">展示图标</van-button> -->
-              <van-icon name="manager-o" size="25" />
+              <img
+                src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg"
+                style="width: 40px; height: 40px; border-radius: 50%;vertical-align:middle;margin-left: 10px"
+              />
+              <!-- <van-icon name="manager-o" size="25" style="margin-left:10px;" /> -->
             </template>
           </van-popover>
         </van-col>
@@ -51,9 +61,17 @@
 import { reactive, toRefs, onMounted } from "vue";
 import pubList from "@/components/public/list";
 import userList from "@/components/pc/userList";
+import Imgs11 from "@/assets/11.png";
+import Imgs22 from "@/assets/22.png";
+import Imgs33 from "@/assets/33.png";
 export default {
   setup() {
     const state = reactive({
+      allImgs: {
+        Imgs11: Imgs11,
+        Imgs22: Imgs22,
+        Imgs33: Imgs33,
+      },
       value: "",
       showPopover: false,
       userListStatus: false,
@@ -103,10 +121,8 @@ export default {
       },
       setWindowWidth() {
         if (document.body.clientWidth > 850) {
-          console.log("大于");
           state.userListStatus = true;
         } else {
-          console.log("小于");
           state.userListStatus = false;
         }
       },
